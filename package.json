@@ -1,0 +1,29 @@
+{
+  "name": "wintersmith-node-sass-indented",
+  "version": "0.0.1",
+  "description": "A wintersmith plugin that compiles sass or scss to css. basedo on combining the wintersmith-sass and wintersmith-node-sass plugins",
+  "author": "Ryan Watkins-Hughes",
+  "license": "MIT",
+  "keywords": [
+    "wintersmith",
+    "wintersmith-plugin",
+    "sass",
+    "scss",
+    "node-sass"
+  ],
+  "dependencies": {
+    "node-sass": "^1.2.3",
+    "coffee-script": "^1.7.1"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.7.1",
+    "wintersmith": "^2.0.10"
+  },
+  "peerDependencies": {
+    "wintersmith": "^2.0.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/propercursive/wintersmith-node-sass-indented.git"
+  }
+}
