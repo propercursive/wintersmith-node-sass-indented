@@ -9,7 +9,7 @@ module.exports = (wintersmith, callback) ->
 
   class NodeSassPlugin extends wintersmith.ContentPlugin
 
-    constructor: (@_filename, @_source) ->
+    constructor: (@_filename) ->
 
     getFilename: ->
       @_filename.relative.replace /sass|scss$/g, 'css'
@@ -20,12 +20,6 @@ module.exports = (wintersmith, callback) ->
           callback null
         else
           command = [@_filename.full]
-
-          if @_source.search(/(\$compressed:)([ ]*)(true[;\n])/ig) isnt -1
-            command.unshift('-t',  'compressed')
-
-          if @_source.search(/(\$compass:)([ ]*)(true[;\n])/ig) isnt -1
-            command.unshift('--compass')
 
           onComplete = (error, stdout, stderr) ->
             if error
