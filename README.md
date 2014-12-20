@@ -1,0 +1,1 @@
+A wintersmith plugin that compiles sass or scss to css. based on combining the wintersmith-sass and wintersmith-node-sass plugins.
