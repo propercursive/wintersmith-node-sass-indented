@@ -1,4 +1,3 @@
-child_process = require 'child_process'
 path = require 'path'
 sass = require 'node-sass'
 fs = require 'fs'
