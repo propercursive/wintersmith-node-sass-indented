@@ -17,6 +17,7 @@ module.exports = (wintersmith, callback) ->
           callback null
         else
           config = wintersmith.config['node-sass'] or {}
+          # temporary hack to prevent node memory issues with sourceComments + wintersmith 'build'
           unless wintersmith.mode is 'preview'
             sourceComments = false
           else
