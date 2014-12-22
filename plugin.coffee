@@ -4,8 +4,6 @@ sass = require 'node-sass'
 fs = require 'fs'
 
 module.exports = (wintersmith, callback) ->
-  options   = wintersmith.config['node-sass'] or {}
-  exec_opts = options.exec_opts or {}
 
   class NodeSassPlugin extends wintersmith.ContentPlugin
 
@@ -19,15 +17,15 @@ module.exports = (wintersmith, callback) ->
         if path.basename(@_filename.full).charAt(0) == '_'
           callback null
         else
-          command = [@_filename.full]
+          config = wintersmith.config['node-sass'] or {}
+          sass.render
+            file: @_filename.full
+            sourceComments: config.sourceComments            
+            success: (css) -> 
+              callback null, new Buffer css
+            error: (err) ->
+              callback new Error err
 
-          onComplete = (error, stdout, stderr) ->
-            if error
-              callback error
-            else
-              callback null, new Buffer stdout
-
-          c = child_process.execFile 'sass', command, exec_opts, onComplete
         
   NodeSassPlugin.fromFile = (filename, callback) ->
     fs.readFile filename.full, (error, buffer) ->
