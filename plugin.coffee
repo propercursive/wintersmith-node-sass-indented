@@ -1,4 +1,3 @@
-child_process = require 'child_process'
 path = require 'path'
 sass = require 'node-sass'
 fs = require 'fs'
@@ -13,20 +12,23 @@ module.exports = (wintersmith, callback) ->
       @_filename.relative.replace /sass|scss$/g, 'css'
 
     getView: ->
-      return (env, locals, contents, templates, callback) =>
+      return (wintersmith, locals, contents, templates, callback) =>
         if path.basename(@_filename.full).charAt(0) == '_'
           callback null
         else
           config = wintersmith.config['node-sass'] or {}
+          unless wintersmith.mode is 'preview'
+            sourceComments = false
+          else
+            sourceComments = config.sourceComments  
           sass.render
             file: @_filename.full
-            sourceComments: config.sourceComments            
+            sourceComments: sourceComments            
             success: (css) -> 
               callback null, new Buffer css
             error: (err) ->
               callback new Error err
 
-        
   NodeSassPlugin.fromFile = (filename, callback) ->
     fs.readFile filename.full, (error, buffer) ->
       if error
