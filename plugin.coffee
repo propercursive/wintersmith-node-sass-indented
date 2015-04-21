@@ -28,7 +28,7 @@ module.exports = (wintersmith, callback) ->
             success: (css) -> 
               callback null, new Buffer css
             error: (err) ->
-              callback new Error err
+              callback new Error err.message + ' on line ' + err.line + ' in ' + err.file
 
   NodeSassPlugin.fromFile = (filename, callback) ->
     fs.readFile filename.full, (error, buffer) ->
