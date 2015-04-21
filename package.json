@@ -12,7 +12,7 @@
     "node-sass"
   ],
   "dependencies": {
-    "node-sass": "^2.1.1",
+    "node-sass": "^1.2.3",
     "coffee-script": "^1.7.1"
   },
   "devDependencies": {
