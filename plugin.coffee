@@ -25,10 +25,11 @@ module.exports = (wintersmith, callback) ->
           sass.render
             file: @_filename.full
             sourceComments: sourceComments            
-            success: (css) -> 
-              callback null, new Buffer css
-            error: (err) ->
-              callback new Error err.message + ' on line ' + err.line + ' in ' + err.file
+            success: (result) -> 
+              callback null, new Buffer result.css
+              console.log(result.stats)
+            error: (error) ->
+              callback new Error error.message + ' on line ' + error.line + ' in ' + error.file
 
   NodeSassPlugin.fromFile = (filename, callback) ->
     fs.readFile filename.full, (error, buffer) ->
