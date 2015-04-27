@@ -27,7 +27,6 @@ module.exports = (wintersmith, callback) ->
             sourceComments: sourceComments            
             success: (result) -> 
               callback null, new Buffer result.css
-              console.log(result.stats)
             error: (error) ->
               callback new Error error.message + ' on line ' + error.line + ' in ' + error.file
 
