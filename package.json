@@ -13,11 +13,11 @@
   ],
   "dependencies": {
     "node-sass": "^2.1.1",
-    "coffee-script": "^1.7.1"
+    "coffee-script": "^1.9.3"
   },
   "devDependencies": {
-    "coffee-script": "^1.7.1",
-    "wintersmith": "^2.0.10"
+    "wintersmith": "^2.0.10",
+    "vows": "^0.8.1"
   },
   "peerDependencies": {
     "wintersmith": "^2.0.10"
