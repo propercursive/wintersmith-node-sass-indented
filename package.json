@@ -24,6 +24,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/propercursive/wintersmith-node-sass-indented.git"
+    "url": "git+https://github.com/propercursive/wintersmith-node-sass-indented.git"
+  },
+  "bugs": {
+    "url": "https://github.com/propercursive/wintersmith-node-sass-indented/issues"
+  },
+  "homepage": "https://github.com/propercursive/wintersmith-node-sass-indented#readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
