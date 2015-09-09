@@ -1,8 +1,9 @@
 wintersmith-node-sass-indented
 ==================
 
-A [Wintersmith](https://github.com/jnordberg/wintersmith) plugin plugin that compiles (indention-based) sass or scss to css. Based on combining approaches of the existing `wintersmith-sass` and `wintersmith-node-sass` plugins.
+A [Wintersmith](https://github.com/jnordberg/wintersmith) plugin that compiles (indention-based) sass or scss to css. Based on combining approaches of the existing `wintersmith-sass` and `wintersmith-node-sass` plugins.
 
+**Note:** Since the indention-based syntax is being phased out, this should only be used for legacy projects and it should be noted that node-sass versions may NOT be updated.
 
 ## Installing
 
